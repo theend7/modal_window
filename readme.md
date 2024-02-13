@@ -36,9 +36,4 @@ Follow these steps to get started with the `modal_window` project:
 5. **Open in Browser:**
     Navigate to `http://localhost:4202/` to see the modal window project in action.
 
-## Install Dependencies
 
-The project relies on the following dependencies. Make sure to install them using npm:
-
-```bash
-npm install 
