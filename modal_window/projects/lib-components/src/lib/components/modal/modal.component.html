@@ -1,8 +1,8 @@
-<div class="this_content">
+<div class="this_content" (click)="ui.h.outside($event)" data-modal-close="true">
     <div class="this_window">
         <div class="this_header">
             <div class="this_title">{{title}}</div>
-            <button class="this_close" (click)="ui.h.close()">Close</button>
+            <button class="this_close" (click)="onclose.emit()">Close</button>
         </div>
         <div class="this_window_content"><ng-content></ng-content></div>
     </div>

@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
     selector: 'modal',
@@ -8,16 +8,23 @@ import { Component, Input } from '@angular/core';
 export class ModalComponent {
 
     @Input() public title: string = '';
+    @Output() public onclose: EventEmitter<void> = new EventEmitter<void>();
 
     constructor() { return; }
 
-    private _close(): void {
-        console.log('modal close');
+    private _outside(event: MouseEvent): void {
+        if (!event) return;
+        if (!event.target) return;
+        const element: HTMLElement = event.target as HTMLElement;
+        if (!element) return;
+        if (!element.dataset) return;
+        if (!element.dataset['modalClose']) return;
+        this.onclose.emit();
     }
 
     public ui = {
         h: {
-            close: this._close.bind(this)
+            outside: this._outside.bind(this)
         }
     }
 }

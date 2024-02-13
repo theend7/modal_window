@@ -1,1 +1,8 @@
-<ui-main></ui-main>
+<ui-main
+    (onopen)="ui.h.open($event)"
+></ui-main>
+<modal
+    *ngIf="modalService.window.modal.content"
+    title="title"
+    (onclose)="modalService.window.close({content: '', type: 'modal'})"
+></modal>

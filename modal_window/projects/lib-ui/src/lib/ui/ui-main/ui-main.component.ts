@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'ui-main',
@@ -7,6 +7,7 @@ import { Component } from '@angular/core';
 })
 export class UiMainComponent {
 
-  constructor() { }
+    @Output() public onopen: EventEmitter<any> = new EventEmitter<any>();
+    constructor() { }
 
 }
