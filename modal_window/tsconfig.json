@@ -11,11 +11,9 @@
     "noImplicitReturns": true,
     "paths": {
       "lib-components": [
-        "dist/lib-components/lib-components",
         "dist/lib-components"
       ],
       "lib-ui": [
-        "dist/lib-ui/lib-ui",
         "dist/lib-ui"
       ]
     },
