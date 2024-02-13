@@ -7,7 +7,7 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "app": "ng build lib-components && ng serve --port 4202"
+    "app": "ng build lib-components && ng build lib-ui && ng serve --port 4202"
   },
   "private": true,
   "dependencies": {

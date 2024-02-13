@@ -1,9 +1,10 @@
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 
-import { LibComponentsModule } from 'projects/lib-components/src/public-api';
+import { LibComponentsModule } from 'lib-components';
+import { LibUiModule } from 'lib-ui';
 
 @NgModule({
   declarations: [
@@ -11,9 +12,11 @@ import { LibComponentsModule } from 'projects/lib-components/src/public-api';
   ],
   imports: [
     BrowserModule,
-    LibComponentsModule
+    LibComponentsModule,
+    LibUiModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AppModule { }
