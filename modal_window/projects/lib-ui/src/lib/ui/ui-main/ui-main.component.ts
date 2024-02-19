@@ -7,7 +7,8 @@ import { Component, EventEmitter, Output } from '@angular/core';
 })
 export class UiMainComponent {
 
-    @Output() public onopen: EventEmitter<any> = new EventEmitter<any>();
+    @Output() public onabout: EventEmitter<any> = new EventEmitter<any>();
+    @Output() public ondata: EventEmitter<any> = new EventEmitter<any>();
     constructor() { }
 
 }

@@ -1,8 +1,13 @@
 <ui-main
-    (onopen)="ui.h.open($event)"
+    (onabout)="ui.h.about($event)"
+    (ondata)="ui.h.data($event)"
 ></ui-main>
 <modal
     *ngIf="modalService.window.modal.content"
+    [ngSwitch]="modalService.window.modal.content"
     title="title"
-    (onclose)="modalService.window.close({content: '', type: 'modal'})"
-></modal>
+    (onclose)="modalService.window.close({content: '', type: 'modal'})">
+
+    <data *ngSwitchCase="'data'"></data>
+    <about *ngSwitchCase="'about'"></about>
+</modal>

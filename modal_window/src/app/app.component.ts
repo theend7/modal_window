@@ -23,13 +23,18 @@ export class AppComponent implements OnDestroy {
         this.modal.unsubscribe();
     }
 
-    private _open(req: any) : void {
+    private _about(req: any) : void {
+        this.modalService.window.open(req);
+    }
+
+    private _data(req: any) : void {
         this.modalService.window.open(req);
     }
 
     public ui = {
         h: {
-            open: this._open.bind(this),
+            about: this._about.bind(this),
+            data: this._data.bind(this)
         }
     }
 }
